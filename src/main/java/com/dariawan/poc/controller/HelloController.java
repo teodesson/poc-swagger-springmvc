@@ -1,15 +1,21 @@
 package com.dariawan.poc.controller;
 
+import com.dariawan.poc.model.Hello;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
 
-    @RequestMapping(method = RequestMethod.GET, value = "dariawan/hello")
-    public String sayHello() {
-        return "Greetings from Dariawan! ";
+    @RequestMapping(value = "dariawan/hello", method = RequestMethod.GET)
+    @ResponseBody
+    public Hello sayHello() {
+        Hello hello = new Hello();
+        hello.setHelloFrom("Dariawan");
+        hello.setHelloMessage("Greetings!");
+        return hello;
     }
 }
