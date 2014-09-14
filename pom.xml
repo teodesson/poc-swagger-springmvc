@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>dariawan</groupId>
+    <groupId>com.dariawan</groupId>
     <artifactId>poc-swagger-springmvc</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
@@ -10,8 +10,13 @@
     <properties>        
         <org.springframework.version>4.0.6.RELEASE</org.springframework.version>
         <servlet.version>2.5</servlet.version>
+        <junit.version>4.11</junit.version>
         <rest-assured.version>1.7.2</rest-assured.version>
         <maven-failsafe-plugin.version>2.12.4</maven-failsafe-plugin.version>
+        
+        <!-- application server configuration -->
+        <appserver.port.http>9699</appserver.port.http>
+        <appserver.deployment.context>/</appserver.deployment.context>
         
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
@@ -30,7 +35,7 @@
             <version>${org.springframework.version}</version>
         </dependency>
 
-<!--        <dependency>
+        <!--<dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson2.version}</version>
@@ -43,6 +48,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
         <dependency>
             <groupId>com.jayway.restassured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -59,7 +71,6 @@
     </dependencies>
 
     <build>
-        <!--
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -141,6 +152,5 @@
                 </executions>
             </plugin>
         </plugins>
-        -->
     </build>
 </project>

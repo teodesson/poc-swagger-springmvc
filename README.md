@@ -2,11 +2,13 @@ poc-swagger-springmvc
 ======================
 
 A set of apps that test or demo swagger-spring mvc https://github.com/martypitt/swagger-springmvc/
+
 About Swagger: http://swagger.wordnik.com/
+
 Swagger UI is a dependency-free collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API; https://github.com/wordnik/swagger-ui
 
 
-Automated testing used : 
+### Automated testing used :  ###
 
 rest-assured
 * http://code.google.com/p/rest-assured/wiki/Usage 
@@ -17,6 +19,7 @@ rest-assured
 
 ### Framework dan Libraries ###
 
+* Spring Framework 4.0.6
 * swagger-springmvc 0.6.5
 
 ### Tools ###
