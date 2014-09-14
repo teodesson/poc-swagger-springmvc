@@ -13,7 +13,6 @@ import org.junit.Test;
 public class HelloControllerTestIT {
 
     protected String target = "http://{serverName}:9699/dariawan/hello";
-    protected String login = "http://{serverName}:9699/j_spring_security_check";
     
     @Before
     public void changeTarget() throws Exception {
@@ -22,7 +21,6 @@ public class HelloControllerTestIT {
             computerName = "localhost";
         }
         target = target.replace("{serverName}", computerName);
-        login = login.replace("{serverName}", computerName);
     }
     
     @Test
@@ -31,6 +29,19 @@ public class HelloControllerTestIT {
                 .expect()
                 .statusCode(200)
                 .body("helloFrom", equalTo("Dariawan"), "helloMessage", equalTo("Greetings!"))
-                .when().get(target);
+                .when().get(target +"/getHello");
+    }
+    
+    @Test
+    public void testSayHelloAsString() {
+        
+        //System.out.println(with()
+        //    .contentType("application/json").get(target +"/getString").getBody().asString());        
+
+        with().header("Accept", "application/json")
+                .expect()
+                .statusCode(200)
+                .body(equalTo("Greetings from Dariawan!"))
+                .when().get(target +"/getString");
     }
 }
