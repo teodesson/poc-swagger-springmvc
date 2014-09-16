@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
-    @RequestMapping(value = "/dariawan/hello/getHello", method = RequestMethod.GET)
+    
+    @RequestMapping(value = "dariawan/hello/getHello", method = RequestMethod.GET)
     @ApiOperation(httpMethod = "GET", value = "Greetings using Swagger, return Hello")
     @ResponseBody
     public Hello sayHello() {
@@ -27,7 +28,7 @@ public class HelloController {
      * 
      * @return greetings
      */
-    @RequestMapping(value = "/dariawan/hello/getString", method = RequestMethod.GET)
+    @RequestMapping(value = "dariawan/hello/getString", method = RequestMethod.GET)
     @ApiOperation(httpMethod = "GET", value = "Greetings using Swagger, return String")
     @ResponseBody
     public String sayHelloAsString() {
