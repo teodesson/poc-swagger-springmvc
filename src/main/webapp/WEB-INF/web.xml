@@ -70,7 +70,7 @@
                 /WEB-INF/springmvc-context.xml
             </param-value>
         </init-param>
-<!--        <init-param>
+        <!--        <init-param>
             <param-name>contextClass</param-name>
             <param-value>
                 org.springframework.web.context.support.AnnotationConfigWebApplicationContext
@@ -79,11 +79,10 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>com.dariawan.poc.config.MySpringConfig</param-value>
-        </init-param>-->
+        </init-param>-->        
         <load-on-startup>1</load-on-startup>
     </servlet>
-
-
+    
     <filter-mapping>
         <filter-name>httpMethodFilter</filter-name>
         <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
