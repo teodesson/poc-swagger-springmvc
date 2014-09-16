@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @RequestMapping(value = "dariawan/hello/getHello", method = RequestMethod.GET)
+    @RequestMapping(value = "/dariawan/hello/getHello", method = RequestMethod.GET)
     @ApiOperation(httpMethod = "GET", value = "Greetings using Swagger, return Hello")
     @ResponseBody
     public Hello sayHello() {

@@ -1,30 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" 
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
          http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
 
-	<context:component-scan base-package="com.dariawan.poc.controller" />
+    <!-- Configures the @Controller programming model -->
+    <!--
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.data.web.PageableHandlerMethodArgumentResolver" />
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+    -->
+    <mvc:annotation-driven />
+     
+    <!--
+          Setup spring to pull in @Controller, @RequestMapping, etc Configuration scans specified packages
+          for classes configured as Spring managed beans and automatically sets up objects annotated with
+          @Controller, @Service etc.
+    -->
+    <context:component-scan base-package="com.dariawan.poc.controller" />
+    
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+    
+    <!-- change default servlet in Tomcat and Jetty -->
+    <!-- needed if we map DispatcherServlet to / -->
+    <!-- so we still able to access folder besides WEB-INF, 
+    example: img, css, js -->
+    <mvc:default-servlet-handler />
 
-	<!-- Configures the @Controller programming model -->
-        <mvc:annotation-driven />
+    <!--
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+            <property name="maxUploadSize" value="10000000" />
+    </bean>
+    -->
 
-	<!-- change default servlet in Tomcat and Jetty -->
-	<!-- needed if we map DispatcherServlet to / -->
-	<!-- so we still able to access folder besides WEB-INF, 
-            example: img, css, js -->
-	<mvc:default-servlet-handler />
+    <!--<bean class="com.mangofactory.swagger.configuration.DocumentationConfig" />-->
+    <!--<bean class="com.dariawan.gospel.config.MySwaggerConfig" />-->
 
-        <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		 Maksimal Upload 10 MB 
-		<property name="maxUploadSize" value="10000000" />
-	</bean>-->
+    <context:property-placeholder location="classpath:/swagger.properties" />
+    <!--
+          Configures view for returning JSON to the client
+    -->
+    <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+        <property name="contentType" value="text/plain"/>
+    </bean>
+    <!--
+          maps handler methods based on HTTP paths
+    -->
+    <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+        <property name="objectMapper">
+            <ref bean="JacksonObjectMapper" />
+        </property>
+    </bean>
 
-        <bean class="com.mangofactory.swagger.configuration.DocumentationConfig" />
+    <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+        <property name="objectMapper">
+            <ref bean="JacksonObjectMapper" />
+        </property>
+    </bean>
 
-        <context:property-placeholder location="classpath:/swagger.properties" />
+    <bean id="JacksonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
 </beans>
