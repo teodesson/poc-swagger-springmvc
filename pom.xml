@@ -8,9 +8,10 @@
     <name>POC Swagger Springmvc</name>
 
     <properties>        
+        <servlet.api.version>3.0.1</servlet.api.version>
         <org.springframework.version>4.0.6.RELEASE</org.springframework.version>
-        <jackson2.version>2.2.0</jackson2.version>
-        <servlet.version>2.5</servlet.version>
+        <swagger-springmvc.version>0.8.8</swagger-springmvc.version>        
+        <jackson-jaxrs.version>1.9.13</jackson-jaxrs.version>
         <junit.version>4.11</junit.version>
         <rest-assured.version>1.7.2</rest-assured.version>
         <maven-failsafe-plugin.version>2.12.4</maven-failsafe-plugin.version>
@@ -36,17 +37,11 @@
             <version>${org.springframework.version}</version>
         </dependency>
 
-        <!--        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson2.version}</version>
-        </dependency>		            -->
-
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.api.version}</version>
+            <scope>provided</scope>            
         </dependency>
 
         <dependency>
@@ -66,19 +61,13 @@
         <dependency>
             <groupId>com.mangofactory</groupId>
             <artifactId>swagger-springmvc</artifactId>
-            <version>0.8.5</version>
+            <version>${swagger-springmvc.version}</version>
         </dependency>
-        
-        <!--<dependency>
-            <groupId>com.fasterxml.jackson.module</groupId>
-            <artifactId>jackson-module-scala</artifactId>
-            <version>2.1.2</version>
-        </dependency>-->
         
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-jaxrs</artifactId>
-            <version>1.9.13</version>
+            <version>${jackson-jaxrs.version}</version>
         </dependency>
     </dependencies>
 
