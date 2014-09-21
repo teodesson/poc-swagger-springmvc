@@ -1,17 +1,13 @@
 package com.dariawan.poc.config;
 
 import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
-import com.mangofactory.swagger.paths.RelativeSwaggerPathProvider;
+import com.mangofactory.swagger.paths.AbsoluteSwaggerPathProvider;
 import com.mangofactory.swagger.paths.SwaggerPathProvider;
 import com.mangofactory.swagger.plugin.EnableSwagger;
 import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
 import com.wordnik.swagger.model.ApiInfo;
-import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  *
@@ -51,6 +47,12 @@ public class MyCustomJavaConfig {
 
     @Bean
     public SwaggerPathProvider relativeSwaggerPathProvider() {
+        return new AbsoluteSwaggerPathProvider();
+    }
+    
+    /*
+    @Bean
+    public SwaggerPathProvider relativeSwaggerPathProvider() {
         return new ApiRelativeSwaggerPathProvider();
     }
 
@@ -68,4 +70,5 @@ public class MyCustomJavaConfig {
             return ROOT + "/api-docs";
         }
     }
+    */
 }
