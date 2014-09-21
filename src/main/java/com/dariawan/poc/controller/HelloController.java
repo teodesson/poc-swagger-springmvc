@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+//@Controller
 public class HelloController {
 
     
@@ -23,7 +25,7 @@ public class HelloController {
     }
     
     /**
-     * using swagger-springmvc 0.6.5 this function failed to return result in swagger-ui, 
+     * using swagger-springmvc 0.8.8 this function still failed to return result in swagger-ui, 
      * but can pass integration testing
      * 
      * @return greetings

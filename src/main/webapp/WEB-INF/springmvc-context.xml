@@ -43,10 +43,9 @@
     </bean>
     -->
 
-    <!--<bean class="com.mangofactory.swagger.configuration.DocumentationConfig" />-->
-    <bean class="com.dariawan.poc.config.MySpringSwaggerConfig" />
+    <!--<bean class="com.dariawan.poc.config.MySpringSwaggerConfig" />-->
+    <bean class="com.dariawan.poc.config.MyCustomJavaConfig "/>
     
-    <!--<context:property-placeholder location="classpath:/swagger.properties" />-->
     <!--
           Configures view for returning JSON to the client
     -->
