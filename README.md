@@ -5,7 +5,9 @@ A set of apps that test or demo swagger-spring mvc https://github.com/martypitt/
 
 About Swagger: http://swagger.wordnik.com/
 
-Swagger UI is a dependency-free collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API; https://github.com/wordnik/swagger-ui
+Swagger UI is a dependency-free collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API;
+
+https://github.com/wordnik/swagger-ui
 
 ## Build dan Run ##
 
@@ -32,7 +34,10 @@ rest-assured
 ### Framework dan Libraries ###
 
 * Spring Framework 4.0.6
-* swagger-springmvc 0.6.5
+* Spring Security 2.3.5
+* swagger-springmvc 0.8.8
+* jackson-jaxrs 1.9.13
+* Google Guava 15.0 (important, lesser version may causing runtime error)
 
 ### Tools ###
 
