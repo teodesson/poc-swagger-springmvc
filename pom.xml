@@ -9,13 +9,13 @@
 
     <properties>        
         <servlet.api.version>3.0.1</servlet.api.version>
-        <org.springframework.version>4.0.6.RELEASE</org.springframework.version>
-        <org.springframework.data.version>1.6.4.RELEASE</org.springframework.data.version>
+        <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
+        <org.springframework.data.version>1.9.4.RELEASE</org.springframework.data.version>
         <org.springframework.security.version>3.2.5.RELEASE</org.springframework.security.version>
-        <swagger-springmvc.version>0.8.8</swagger-springmvc.version>        
+        <swagger-springmvc.version>2.5.0</swagger-springmvc.version>        
         <jackson-jaxrs.version>1.9.13</jackson-jaxrs.version>
         <junit.version>4.11</junit.version>
-        <rest-assured.version>1.7.2</rest-assured.version>
+        <rest-assured.version>2.8.0</rest-assured.version>
         <maven-failsafe-plugin.version>2.12.4</maven-failsafe-plugin.version>
         
         <!-- application server configuration -->
@@ -73,8 +73,14 @@
         </dependency>
 
         <dependency>
-            <groupId>com.mangofactory</groupId>
-            <artifactId>swagger-springmvc</artifactId>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger-springmvc.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger-springmvc.version}</version>
         </dependency>
         
@@ -128,7 +134,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>keytool-maven-plugin</artifactId>
-                <version>1.3</version>
+                <version>1.5</version>
                 <executions>
                     <execution>
                         <phase>generate-resources</phase>

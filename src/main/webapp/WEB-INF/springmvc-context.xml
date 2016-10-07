@@ -43,8 +43,7 @@
     </bean>
     -->
 
-    <!--<bean class="com.dariawan.poc.config.MySpringSwaggerConfig" />-->
-    <bean class="com.dariawan.poc.config.MyCustomJavaConfig "/>
+    <bean class="com.dariawan.poc.config.MySpringSwaggerConfig" />
     
     <!--
           Configures view for returning JSON to the client

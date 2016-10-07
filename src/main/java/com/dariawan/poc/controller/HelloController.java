@@ -1,8 +1,7 @@
 package com.dariawan.poc.controller;
 
 import com.dariawan.poc.model.Hello;
-import com.wordnik.swagger.annotations.ApiOperation;
-import org.springframework.stereotype.Controller;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
