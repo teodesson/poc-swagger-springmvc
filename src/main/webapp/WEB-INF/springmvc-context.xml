@@ -48,20 +48,20 @@
     <!--
           Configures view for returning JSON to the client
     -->
-    <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+    <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
         <property name="contentType" value="text/plain"/>
         <property name="objectMapper">
-            <ref bean="JacksonObjectMapper" />
+            <ref bean="jacksonObjectMapper" />
         </property>
     </bean>
     <!--
           maps handler methods based on HTTP paths
     -->
-    <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+    <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="objectMapper">
-            <ref bean="JacksonObjectMapper" />
+            <ref bean="jacksonObjectMapper" />
         </property>
     </bean>
 
-    <bean id="JacksonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
+    <bean id="jacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
 </beans>
