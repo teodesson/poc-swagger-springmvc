@@ -33,10 +33,10 @@ rest-assured
 
 ### Framework dan Libraries ###
 
-* Spring Framework 4.0.6
+* Spring Framework 4.2.6
 * Spring Security 2.3.5
-* swagger-springmvc 0.8.8
-* jackson-jaxrs 1.9.13
+* Springfox swagger 2.5.0
+* jackson-jaxrs 2.9.8
 * Google Guava 15.0 (important, lesser version may causing runtime error)
 
 ### Tools ###

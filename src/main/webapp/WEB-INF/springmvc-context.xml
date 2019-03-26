@@ -45,6 +45,9 @@
 
     <bean class="com.dariawan.poc.config.MySpringSwaggerConfig" />
     
+    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+     
     <!--
           Configures view for returning JSON to the client
     -->
