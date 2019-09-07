@@ -1,8 +1,6 @@
 poc-swagger-springmvc
 ======================
 
-A set of apps that test or demo swagger-spring mvc https://github.com/martypitt/swagger-springmvc/
-
 About Swagger: http://swagger.wordnik.com/
 
 Swagger UI is a dependency-free collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API;
@@ -36,7 +34,7 @@ rest-assured
 * Spring Framework 4.2.6
 * Spring Security 2.3.5
 * Springfox swagger 2.5.0
-* jackson-jaxrs 2.9.8
+* jackson-jaxrs 2.9.9.3
 * Google Guava 15.0 (important, lesser version may causing runtime error)
 
 ### Tools ###
@@ -44,10 +42,3 @@ rest-assured
 * Build Tool : Maven 3
 * Integration Test Runner : Maven Failsafe Plugin
 * Functional Test : Rest-Assured, swagger-ui
-
-
-## Dariawan or Dallanube? ##
-Dariawan is short-form of my full name Desson Ariawan. It's translated into "From The Cloud" in English or "Dalla Nube" in Italian. That's the background of my project name
-
-Cheers,
-Desson Ariawan
